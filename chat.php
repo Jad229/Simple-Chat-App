@@ -38,7 +38,7 @@
         <input type="password" id="password" name="password" placeholder="Password" required>
 
         <label for="chat-content">Chat Message</label>
-        <textarea cols="50" rows="5" id="chat-content" placeholder="Enter message here..."></textarea>
+        <textarea id="chat-content" placeholder="Enter message here..."></textarea>
     </form>
 
     <!--    form for listener to receive message-->
@@ -49,7 +49,7 @@
         <button class="receive-btn">Listen</button>
 
         <label for="retrieved-content">Message Display</label>
-        <textarea cols="50" rows="5" id="retrieved-content" placeholder="Retrieved message will display here..."></textarea>
+        <textarea id="retrieved-content" placeholder="Retrieved message will display here..."></textarea>
     </form>
 </body>
 </html>

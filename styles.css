@@ -3,8 +3,8 @@ html, body{
     padding: 0;
 }
 body{
-    background-color: #e2b7e2;
-    background-image: linear-gradient(90deg, #e2b7e2 0%, #97D9E1 100%);
+    background-color: #00DBDE;
+    background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%);
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -17,10 +17,11 @@ table{
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    opacity: 0.8;
 }
 
 thead tr{
-    background-color: #e2b7e2;
+    background-color: Black;
     color: #ffffff;
     text-align: left;
 }
@@ -30,7 +31,11 @@ tbody tr{
 }
 
 tbody tr:nth-of-type(even) {
-    background-color: #e2b7e2;
+    color: white;
+    background-color: black;
+}
+tbody tr:nth-of-type(odd) {
+    background-color: silver;
 }
 
 tbody tr:last-of-type {
@@ -47,11 +52,13 @@ th,td{
     justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 25vw;
+    width: 20vw;
     margin: 1% auto;
     padding: 2%;
     border-radius: 10px;
     box-shadow: 0 0 15px darkgrey;
+    background-color: #eeeeee;
+    opacity: 0.7;
 }
 
 label{
@@ -60,26 +67,33 @@ label{
 }
 
 input, textarea{
+    width: 68%;
     border: none;
     padding: 10px;
     border-radius: 20px;
     box-shadow: 0 0 3px darkgrey;
+    opacity: 0.95;
+
 }
 
+textarea{
+    height: 50px;
+}
 
 .receive-btn {
     border: none;
-    background-image: linear-gradient(to right, #000000 0%, grey  51%, #fff  100%);
+    background-image: linear-gradient(to right, #00DBDE 0%, grey  51%, #FC00FF  100%);
     margin: 10px;
-    padding: 15px 45px;
+    padding: 7px 45px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+    border-radius: 30px;
     display: block;
+    width: 68%;
 }
 
 .receive-btn:hover {
@@ -88,11 +102,3 @@ input, textarea{
     text-decoration: none;
 }
 
-.chat-send-form{
-    background-color: powderblue;
-}
-
-.chat-receive-form{
-    background-color: pink;
-
-}
