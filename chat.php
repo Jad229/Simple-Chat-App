@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Chat App</title>
     <link href="styles.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 <body>
     <?php include "connection.php";
@@ -51,5 +52,6 @@
         <label for="retrieved-content">Message Display</label>
         <textarea id="retrieved-content" placeholder="Retrieved message will display here..."></textarea>
     </form>
+    <script src="app.js" type="text/javascript"></script>
 </body>
 </html>
