@@ -18,11 +18,31 @@ $(document).ready(function(){
             if(response === 1){
                 messageLog.text("Message Sent!");
                 messageLog.css("color","green");
-                $('#retrieved-content').text(response);
-            } else if(response !== 1){
+            } else{
                 messageLog.text("Invalid Credentials");
                 messageLog.css("color" , "red");
             }
         });
+    });
+
+    $('#receive-btn').click( (e) => {
+        console.log('listening');
+        e.preventDefault();
+
+        $.ajax({
+            type: "GET",
+            url: "pull.php",
+            data: {
+                ContactName: $('#contact-name').val(),
+            },
+            dataType: "json"
+        })
+            .done(response => {
+                let chatBox = $("#retrieved-content");
+
+                if(response !== ''){
+                    chatBox.text(response);
+                }
+            })
     });
 });

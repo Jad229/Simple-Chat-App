@@ -36,4 +36,5 @@ if($_POST['Username'] && $_POST['Password'] ){
 }
 
 echo $responseCode;
+mysqli_close($con);
 ?>

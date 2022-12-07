@@ -51,7 +51,7 @@
         <label for="contact-name">Enter Contact Name</label>
         <input type="text" id="contact-name" name="contact-name" placeholder="moe1">
 
-        <button class="receive-btn">Listen</button>
+        <button id="receive-btn">Listen</button>
 
         <label for="retrieved-content">Message Display</label>
         <textarea id="retrieved-content" placeholder="Retrieved message will display here..."></textarea>

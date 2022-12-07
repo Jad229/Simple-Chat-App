@@ -80,7 +80,7 @@ textarea{
     height: 50px;
 }
 
-.receive-btn {
+#receive-btn {
     border: none;
     background-image: linear-gradient(to right, #00DBDE 0%, grey  51%, #FC00FF  100%);
     margin: 10px;
@@ -96,7 +96,7 @@ textarea{
     width: 68%;
 }
 
-.receive-btn:hover {
+#receive-btn:hover {
     background-position: right center;
     color: #fff;
     text-decoration: none;
