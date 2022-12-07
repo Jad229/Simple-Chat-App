@@ -1,24 +1,27 @@
 $(document).ready(function(){
-    $('.chat-content').keyup( () => {
-        let requestData = {
-            'Username': $('#username').val(),
-            'Password': $('#password').val(),
-            'ChatContent': $('#chat-content').val()
-        }
+    $('#chat-content').keyup(() =>{
+        console.log('key pressed');
+
         $.ajax({
             type: "POST",
             url: "push.php",
-            data: requestData.seralize(),
-            success: response => {
-                var jsonData = JSON.parse(response);
-
-                //if the user is authenticated
-                if(jsonData.success === "1"){
-                    $('#retrieved-content').html(response);
-                }
-                else{
-                    alert('Warning: User not found');
-                }
+            data: {
+                Username: $('#username').val(),
+                Password: $('#password').val(),
+                ChatContent: $('#chat-content').val()
+            },
+            dataType: "json"
+        })
+        .done(response => {
+            let messageLog = $('#message-log');
+            //if the user is authenticated
+            if(response === 1){
+                messageLog.text("Message Sent!");
+                messageLog.css("color","green");
+                $('#retrieved-content').text(response);
+            } else if(response !== 1){
+                messageLog.text("Invalid Credentials");
+                messageLog.css("color" , "red");
             }
         });
     });

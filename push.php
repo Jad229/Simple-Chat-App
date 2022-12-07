@@ -1,22 +1,39 @@
-<?php include "connection.php"
-    if(isset($_POST['username'] && isset($_POST['password']){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+<?php include "connection.php";
 
-        $sql = "SELECT ChatContent FROM Chat WHERE Username = $username AND 'Password' = $password";
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-        $result = mysqli_query($con, $sql);
+$responseCode = -1;
 
-        if(mysqli_num_rows($result) > 0){
-            while($data = mysqli_fetch_assoc($result)){
+if($_POST['Username'] && $_POST['Password'] ){
+    $username = $_POST['Username'];
+    $password = $_POST['Password'];
+    $chatContent = $_POST['ChatContent'];
 
+    $sql = "SELECT * FROM Chat WHERE Username = '$username'";
+
+    $result = mysqli_query($con, $sql);
+
+    if(mysqli_num_rows($result) > 0){
+        while($data = mysqli_fetch_assoc($result)){
+            if($data["Password"] == $password){
+                $chatContentSql = "UPDATE Chat SET ChatContent = '$chatContent' WHERE Username = '$username'";
+
+                if(!$con->query($chatContentSql) === TRUE){
+                    echo "Error: " . $chatContentSql . "<br>" . $con->error;
+                }
+                $responseCode = 1;
+            } else {
+                $responseCode = 0;
             }
-        } else {
-            echo json_encode(array('success' => 0));
         }
-
-        echo json_encode(array('success' => 1));
     } else {
-        echo json_encode(array('success' => 0));
+        $responseCode = 0;
     }
+} else {
+ $responseCode = 0;
+}
+
+echo $responseCode;
 ?>

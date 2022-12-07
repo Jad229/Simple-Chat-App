@@ -5,13 +5,13 @@
     <title>Chat App</title>
     <link href="styles.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <?php include "connection.php";
         $sql = "SELECT Username FROM Chat";
 
         $result = mysqli_query($con, $sql);
-
 
         echo " <table border='1'>
                 <thead>
@@ -39,8 +39,12 @@
         <input type="password" id="password" name="password" placeholder="Password" required>
 
         <label for="chat-content">Chat Message</label>
-        <textarea id="chat-content" placeholder="Enter message here..."></textarea>
+        <textarea id="chat-content" name="chat-content" placeholder="Enter message here..."></textarea>
+        <div id="error-log">
+                <span id="message-log"><span>
+        </div>
     </form>
+
 
     <!--    form for listener to receive message-->
     <form class="chat-receive-form">
@@ -52,6 +56,5 @@
         <label for="retrieved-content">Message Display</label>
         <textarea id="retrieved-content" placeholder="Retrieved message will display here..."></textarea>
     </form>
-    <script src="app.js" type="text/javascript"></script>
 </body>
 </html>
