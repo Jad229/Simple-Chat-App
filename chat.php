@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat App</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="styles.css" type="text/css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </head>

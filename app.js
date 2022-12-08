@@ -25,9 +25,8 @@ $(document).ready(function(){
         });
     });
 
-    $('#receive-btn').click( (e) => {
+    setInterval( () => {
         console.log('listening');
-        e.preventDefault();
 
         $.ajax({
             type: "GET",
@@ -44,5 +43,5 @@ $(document).ready(function(){
                 chatBox.text(response);
             }
         });
-    });
+    }, 2000);
 });
