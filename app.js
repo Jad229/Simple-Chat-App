@@ -37,12 +37,12 @@ $(document).ready(function(){
             },
             dataType: "json"
         })
-            .done(response => {
-                let chatBox = $("#retrieved-content");
+        .done(response => {
+            let chatBox = $("#retrieved-content");
 
-                if(response !== ''){
-                    chatBox.text(response);
-                }
-            })
+            if(response !== ''){
+                chatBox.text(response);
+            }
+        });
     });
 });

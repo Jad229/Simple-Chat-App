@@ -10,6 +10,9 @@ $sql = "SELECT ChatContent FROM Chat WHERE Username = '$contactName'";
 
 $result = mysqli_query($con, $sql);
 
+while($row = mysqli_fetch_assoc($result)){
+    echo json_encode($row['ChatContent']);
+}
 
 mysqli_close($con);
 ?>
