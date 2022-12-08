@@ -43,5 +43,5 @@ $(document).ready(function(){
                 chatBox.text(response);
             }
         });
-    }, 2000);
+    }, 5000);
 });
